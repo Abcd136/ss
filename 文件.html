@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>炫酷软件下载界面</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #333; /* 背景颜色改为灰色 */
+            overflow: hidden;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        .download-card {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(20px);
+            padding: 20px;
+            text-align: center;
+            max-width: 90%;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .download-card h1 {
+            color: #fff; /* 字体颜色 */
+            font-size: calc(1em + 2vw); /* 响应式字体大小 */
+            margin-bottom: 20px;
+            animation: slideInLeft 1s ease-in-out;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .download-card p {
+            color: #fff; /* 字体颜色 */
+            font-size: calc(1em + 1vw); /* 响应式字体大小 */
+            margin-bottom: 30px;
+            animation: slideInRight 1s ease-in-out;
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .download-button {
+            background: linear-gradient(45deg, #ff6347, #ff4500); /* 渐变按钮 */
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: calc(1em + 0.5vw); /* 响应式字体大小 */
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .download-button:hover {
+            background: #ff4500;
+        }
+
+        .download-button:active {
+            transform: scale(0.95);
+        }
+
+        /* 新增的样式，用于点击时的金色效果 */
+        .download-button.active {
+            background: linear-gradient(45deg, gold, #FFD700); /* 闪闪发亮的金色 */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="download-card">
+            <h1>皮卡软件下载</h1>
+            <p>立即下载享受我们的软件功能！</p>
+            <button class="download-button" onclick="downloadSoftware(this)">点击下载</button>
+        </div>
+    </div>
+    <script>
+        function downloadSoftware(button) {
+            alert('开始下载...'); // 这里可以添加实际的下载逻辑或跳转到下载链接
+            button.classList.add('active'); // 添加active类以改变按钮颜色
+        }
+    </script>
+</body>
+</html>
